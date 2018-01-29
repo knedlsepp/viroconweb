@@ -526,6 +526,18 @@ def download_pdf(request):
     response['Content-Disposition'] = path
     return response
 
+def download_csv(request):
+    """
+    The function returns a csv download with the results of the contour calculation.
+    :param request:     user request to download a certain result csv.
+    :return:            result csv
+    """
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="contour_table.csv"'
+    writer = csv.writer(response)
+    writer.writerow(['First row', 'Foo', 'Bar', 'Baz'])
+    writer.writerow(['Second row', 'A', 'B', 'C', '"Testing"', "Here's a quote"])
+    return response
 
 def get_info_from_file(url):
     """

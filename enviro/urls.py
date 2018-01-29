@@ -9,6 +9,9 @@ urlpatterns = [
     # URL to reach the plot_pdf
     url(r'^download_pdf$', views.download_pdf, name='download_pdf'),
 
+    # URL to reach the plot_csv
+    url(r'^download_csv$', views.download_csv, name='download_csv'),
+
 
     # ------------------------------------------------------------------------------------------------------------------
     # Process Probabilistic Model

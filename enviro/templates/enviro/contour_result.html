@@ -17,7 +17,10 @@
         {% endfor %}
         <br>
     {% endif %}
-    <div class="col-md-4">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-2">
+        <button type="button" class="btn btn-default" onclick="location='{% static path %}'">Download PDF</button>
     </div>
     <div class="col-md-2">
         {% if dim == 3 %}
@@ -27,11 +30,13 @@
         {% endif %}
     </div>
     <div class="col-md-2">
-        <button type="button" class="btn btn-default" onclick="location='{% static path %}'">Download PDF</button>
     </div>
-
-    <div class="col-md-4">
-
+    <a href="{% url "enviro:download_csv" %}">
+    <div class="col-md-2">
+        <button type="button" class="btn btn-default" >Download CSV</button>
+    </div>
+    </a>
+    <div class="col-md-2">
     </div>
 
     <br><br>
